@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Expense Tracker App
 
-First, run the development server:
+This is a simple **Expense Tracker application** built using **React** and **Redux Toolkit**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+I created this project to practice **authentication**, **state management**, and **CRUD operations** in a real-world style React application.
+For this project,**I didn’t use a backend**
+The goal was to demonstrate frontend skills like authentication flow, state management, filtering, and CRUD operations.
+I have already built several mini projects, so integrating a backend (Node.js + MongoDB) is not an issue for me.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**NOTE** this project test purpose only. once you create the account with your data, incase browser reload all data is **"LOST"**
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## What this project incluedes
+- User can signup and login
+- Logged-in user can add daily expenses
+- Expenses can be edited and deleted
+- User can filter expenses by month and category
+- Monthly total is shown in the dashboard
+- Logout option is available
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Each user can see **only their own expenses**.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Main Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Login / Signup
+- Forgot password
+- Add expense
+- Edit expense (inline edit)
+- Delete expense
+- Filter by month
+- Filter by category
+- Monthly expense total
+- Protected pages (dashboard & filter page)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
+## INSTALLATION / SETUP
+ - JUST USE 'npm install' command.
+ -then 'npm start' to run this project in local.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
