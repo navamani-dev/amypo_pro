@@ -14,18 +14,6 @@ export default function ExpenseList({ filters = {}, enableEdit = false }) {
     date: "",
     description: "",
   });
-  const CATEGORY_OPTIONS = [
-    "Food",
-    "Travel",
-    "Rent",
-    "Shopping",
-    "Bills",
-    "Entertainment",
-    "Medical",
-    "Education",
-    "Groceries",
-    "Others",
-  ];
 
   if (!user) return null;
 
