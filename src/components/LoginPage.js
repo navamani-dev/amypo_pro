@@ -3,14 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { signup, login, updatePassword } from "../store/userSlice";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useEffect } from "react";
 
 export default function LoginPage() {
   const [isSignup, setIsSignup] = useState(false);
   const [pass, setPass] = useState(false);
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [visitors, setVisitors] = useState(0)
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -21,6 +22,22 @@ export default function LoginPage() {
     setEmail("");
     setPassword("");
   }
+
+// visitors
+useEffect(() => {
+  let totalVisitors = localStorage.getItem("totalVisitors");
+  let hasVisited = localStorage.getItem("hasVisited");
+  if (!totalVisitors) {
+    totalVisitors = 0;
+  }
+  if (!hasVisited) {
+    totalVisitors = Number(totalVisitors) + 1;
+    localStorage.setItem("totalVisitors", totalVisitors);
+    localStorage.setItem("hasVisited", "true");
+  }
+  setVisitors(totalVisitors);
+}, []);
+
 
   // SIGNUP
 const handleSignup = (e) => {
@@ -81,7 +98,8 @@ const handleSignup = (e) => {
     toast.success("Password updated");
   };
 
-  return (
+  return <>
+ <p> Visitors: {visitors}</p>
     <div className="container-fluid vh-100">
       <div className="row h-100 align-items-center">
         <div className="col-md-5 d-flex justify-content-center">
@@ -161,5 +179,5 @@ const handleSignup = (e) => {
         </div>
       </div>
     </div>
-  );
+  </>
 }
