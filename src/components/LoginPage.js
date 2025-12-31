@@ -25,19 +25,17 @@ export default function LoginPage() {
 
 // visitors
 useEffect(() => {
-  let totalVisitors = localStorage.getItem("totalVisitors");
-  let hasVisited = localStorage.getItem("hasVisited");
-  if (!totalVisitors) {
-    totalVisitors = 0;
-  }
-  if (!hasVisited) {
-    totalVisitors = Number(totalVisitors) + 1;
-    localStorage.setItem("totalVisitors", totalVisitors);
-    localStorage.setItem("hasVisited", "true");
-  }
-  setVisitors(totalVisitors);
-}, []);
+  let count = localStorage.getItem("visitCount");
 
+  if (count) {
+    count = Number(count) + 1;
+  } else {
+    count = 1;
+  }
+
+  localStorage.setItem("visitCount", count);
+  setVisitors(count);
+}, []);
 
   // SIGNUP
 const handleSignup = (e) => {
