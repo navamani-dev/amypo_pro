@@ -74,7 +74,6 @@ export default function Dashboard() {
             <ExpenseList
               filters={{ category: "", month: "", search: "" }}
               setEditData={setEditData}
-              enableEdit={true}
             />{" "}
           </div>
         </div>

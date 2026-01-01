@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteExpense, updateExpense } from "../store/ExpenseSlice";
 import { useState } from "react";
 
-export default function ExpenseList({ filters = {}, enableEdit = false }) {
+export default function ExpenseList({ filters = {} }) {
   const dispatch = useDispatch();
   const { expenses } = useSelector((state) => state.expense);
   const user = useSelector((state) => state.user.currentUser);
@@ -123,14 +123,14 @@ export default function ExpenseList({ filters = {}, enableEdit = false }) {
               </div>
 
               <div>
-                {enableEdit && (
+                
                   <button
                     className="btn btn-warning me-2"
                     onClick={() => startEdit(e)}
                   >
                     Edit
                   </button>
-                )}
+                
 
                 <button
                   className="btn btn-danger"
